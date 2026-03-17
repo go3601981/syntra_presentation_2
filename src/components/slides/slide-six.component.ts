@@ -64,22 +64,39 @@ import { TranslationService } from '../../services/translation.service';
         
         @for (prob of problems; track $index) {
           <div 
-            class="group relative bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 transition-all duration-700 hover:bg-white/[0.05] hover:border-red-500/40 hover:-translate-y-2 animate-slide-up overflow-hidden"
+            class="group relative bg-white/[0.02] border border-white/10 rounded-[2rem] p-6 transition-all duration-700 hover:bg-white/[0.05] hover:border-red-500/40 hover:-translate-y-2 animate-slide-up overflow-hidden"
             [style.animation-delay.s]="$index * 0.2"
           >
             <!-- Warning Glow -->
             <div class="absolute -top-24 -right-24 w-48 h-48 bg-red-500/10 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
             <div class="relative z-10">
-              <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-500/20 group-hover:scale-110 transition-all duration-500 border border-white/10">
-                <mat-icon class="!w-6 !h-6 !text-2xl text-white/40 group-hover:text-red-500 transition-colors duration-500">
-                  {{ prob.icon }}
-                </mat-icon>
+              <div class="w-24 h-24 bg-white/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-red-500/10 group-hover:scale-110 transition-all duration-500 border border-white/10 relative">
+                @if ($index === 0) {
+                  <!-- Visibility Gap (EyeOff) -->
+                  <svg class="w-[55%] h-[55%] text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+                    <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
+                    <path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
+                    <line x1="2" y1="2" x2="22" y2="22"/>
+                  </svg>
+                } @else if ($index === 1) {
+                  <!-- Inconsistent Presence (Activity) -->
+                  <svg class="w-[55%] h-[55%] text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                  </svg>
+                } @else {
+                  <!-- Slow Response (Clock) -->
+                  <svg class="w-[55%] h-[55%] text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                }
               </div>
-              <h3 class="text-xl font-black text-white mb-2 tracking-tight group-hover:text-red-500 transition-colors">
+              <h3 class="text-2xl font-black text-white mb-3 tracking-tight group-hover:text-red-500 transition-colors">
                 {{ t.translate(prob.titleKey) }}
               </h3>
-              <p class="text-white/40 leading-relaxed text-sm font-light group-hover:text-white/70 transition-colors">
+              <p class="text-white/50 leading-relaxed text-base font-light group-hover:text-white/80 transition-colors">
                 {{ t.translate(prob.descKey) }}
               </p>
             </div>
@@ -148,9 +165,18 @@ import { TranslationService } from '../../services/translation.service';
 })
 export class SlideSixComponent {
   problems = [
-    { titleKey: 'slide6_problem.prob1_title', descKey: 'slide6_problem.prob1_desc', icon: 'grid_view' },
-    { titleKey: 'slide6_problem.prob2_title', descKey: 'slide6_problem.prob2_desc', icon: 'sync_problem' },
-    { titleKey: 'slide6_problem.prob3_title', descKey: 'slide6_problem.prob3_desc', icon: 'speed' }
+    { 
+      titleKey: 'slide6_problem.prob1_title', 
+      descKey: 'slide6_problem.prob1_desc'
+    },
+    { 
+      titleKey: 'slide6_problem.prob2_title', 
+      descKey: 'slide6_problem.prob2_desc'
+    },
+    { 
+      titleKey: 'slide6_problem.prob3_title', 
+      descKey: 'slide6_problem.prob3_desc'
+    }
   ];
 
   constructor(public t: TranslationService) {}

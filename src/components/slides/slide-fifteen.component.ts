@@ -65,10 +65,21 @@ import { TranslationService } from '../../services/translation.service';
               <div class="absolute inset-0 bg-gradient-to-br from-syntra-action-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
               <div class="relative z-10 flex flex-col items-center">
-                <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-syntra-action-primary/10 group-hover:border-syntra-action-primary/40 transition-all duration-500">
-                  <mat-icon class="text-white/40 group-hover:text-syntra-action-primary transition-colors duration-500 !text-3xl md:!text-4xl !w-auto !h-auto">
-                    {{ cta.icon }}
-                  </mat-icon>
+                <div class="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-syntra-action-primary/10 group-hover:border-syntra-action-primary/40 transition-all duration-500 relative">
+                  
+                  @if ($index === 0) {
+                    <!-- Target (Lucide) -->
+                    <svg class="w-[55%] h-[55%] text-syntra-action-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"/>
+                      <circle cx="12" cy="12" r="6"/>
+                      <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                  } @else {
+                    <!-- Infinity (Lucide) -->
+                    <svg class="w-[55%] h-[55%] text-syntra-action-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/>
+                    </svg>
+                  }
                 </div>
                 
                 <h3 class="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-syntra-action-primary transition-colors">
@@ -154,8 +165,14 @@ export class SlideFifteenComponent {
   Math = Math;
   
   ctas = [
-    { labelKey: 'slide15_cta.brief', descKey: 'slide15_cta.brief_desc', icon: 'auto_awesome' },
-    { labelKey: 'slide15_cta.ongoing', descKey: 'slide15_cta.ongoing_desc', icon: 'psychology' }
+    { 
+      labelKey: 'slide15_cta.brief', 
+      descKey: 'slide15_cta.brief_desc'
+    },
+    { 
+      labelKey: 'slide15_cta.ongoing', 
+      descKey: 'slide15_cta.ongoing_desc'
+    }
   ];
 
   constructor(public t: TranslationService) {}

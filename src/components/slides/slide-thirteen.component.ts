@@ -26,10 +26,12 @@ import { TranslationService } from '../../services/translation.service';
         <!-- One-Time Block -->
         <div class="flex-1 pricing-block group p-6 bg-slate-50 rounded-[2rem] border border-slate-300 transition-all duration-500 hover:bg-white hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.08)]">
           <div class="flex items-center justify-between mb-6">
-            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center border border-slate-100 group-hover:border-syntra-action-primary/30 transition-colors duration-500">
-              <mat-icon class="text-slate-400 group-hover:text-syntra-action-primary transition-colors duration-500 !text-2xl !w-auto !h-auto">
-                assignment_turned_in
-              </mat-icon>
+            <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center border border-slate-200 group-hover:border-syntra-action-primary/30 transition-colors duration-500 relative">
+              <svg class="w-[55%] h-[55%] text-syntra-action-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                <polyline points="2 17 12 22 22 17"/>
+                <polyline points="2 12 12 17 22 12"/>
+              </svg>
             </div>
             <span class="px-3 py-1 bg-slate-200/50 text-slate-500 font-mono text-[9px] uppercase tracking-widest rounded-full">
               {{ t.translate('slide13_model.setup_label') }}
@@ -47,25 +49,33 @@ import { TranslationService } from '../../services/translation.service';
           <div class="mt-6 w-full h-px bg-slate-200/60"></div>
           
           <div class="mt-4 flex items-center gap-3 text-syntra-action-primary">
-            <mat-icon class="!text-lg !w-auto !h-auto">check_circle</mat-icon>
+            <div class="w-8 h-8 rounded-lg bg-syntra-action-primary/10 flex items-center justify-center relative">
+              <svg class="w-[55%] h-[55%] text-syntra-action-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
             <span class="font-mono text-[10px] uppercase tracking-widest font-bold">Foundation</span>
           </div>
         </div>
 
         <!-- Plus Sign (Desktop) -->
         <div class="hidden md:flex items-center justify-center">
-          <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
-            <mat-icon class="text-slate-300 !text-xl !w-auto !h-auto">add</mat-icon>
+          <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center relative border border-slate-200">
+            <svg class="w-[55%] h-[55%] text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
           </div>
         </div>
 
         <!-- Monthly Retainer Block -->
         <div class="flex-1 pricing-block group p-6 bg-slate-900 rounded-[2rem] shadow-2xl shadow-slate-900/10 transition-all duration-500 hover:scale-[1.02]">
           <div class="flex items-center justify-between mb-6">
-            <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center border border-slate-700 group-hover:border-syntra-action-primary/50 transition-colors duration-500">
-              <mat-icon class="text-slate-500 group-hover:text-syntra-action-primary transition-colors duration-500 !text-2xl !w-auto !h-auto">
-                update
-              </mat-icon>
+            <div class="w-20 h-20 bg-slate-800 rounded-2xl flex items-center justify-center border border-slate-700 group-hover:border-syntra-action-primary/50 transition-colors duration-500 relative">
+              <svg class="w-[55%] h-[55%] text-syntra-action-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 14 4-4"/>
+                <path d="M3.34 19a10 10 0 1 1 17.32 0"/>
+              </svg>
             </div>
             <span class="px-3 py-1 bg-syntra-action-primary/10 text-syntra-action-primary font-mono text-[9px] uppercase tracking-widest rounded-full">
               {{ t.translate('slide13_model.ongoing_label') }}
@@ -83,7 +93,12 @@ import { TranslationService } from '../../services/translation.service';
           <div class="mt-6 w-full h-px bg-slate-800"></div>
           
           <div class="mt-4 flex items-center gap-3 text-syntra-action-primary">
-            <mat-icon class="!text-lg !w-auto !h-auto">trending_up</mat-icon>
+            <div class="w-8 h-8 rounded-lg bg-syntra-action-primary/10 flex items-center justify-center relative">
+              <svg class="w-[55%] h-[55%] text-syntra-action-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+            </div>
             <span class="font-mono text-[10px] uppercase tracking-widest font-bold">Continuity</span>
           </div>
         </div>

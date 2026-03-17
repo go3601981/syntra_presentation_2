@@ -19,7 +19,12 @@ import { TranslationService } from '../../services/translation.service';
           {{ t.translate('slide12_impact.title') }}
         </h2>
         <div class="flex items-center gap-4 text-white/40 font-mono text-xs uppercase tracking-widest">
-          <mat-icon class="!w-4 !h-4 !text-sm text-syntra-action-primary">search</mat-icon>
+          <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center relative">
+            <svg class="w-[55%] h-[55%] text-syntra-action-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
           {{ t.translate('slide12_impact.query') }}
         </div>
       </div>
@@ -36,7 +41,7 @@ import { TranslationService } from '../../services/translation.service';
             </span>
           </div>
           
-          <div class="relative flex-1 bg-white/5 backdrop-blur-sm rounded-[1.5rem] border border-red-500/20 p-6 md:p-8 overflow-hidden group">
+          <div class="relative flex-1 bg-white/5 rounded-[1.5rem] border border-red-500/20 p-6 md:p-8 overflow-hidden group">
             <!-- Messy Background Pattern -->
             <div class="absolute inset-0 opacity-[0.05] pointer-events-none">
               <div class="absolute top-10 left-10 w-32 h-32 border-4 border-red-500 rounded-full rotate-12"></div>
@@ -57,8 +62,13 @@ import { TranslationService } from '../../services/translation.service';
 
             <!-- Error Indicators -->
             <div class="absolute bottom-6 right-6 flex gap-2">
-              <mat-icon class="text-red-500/20 !text-3xl !w-auto !h-auto">error_outline</mat-icon>
-              <mat-icon class="text-red-500/10 !text-3xl !w-auto !h-auto animate-bounce">warning</mat-icon>
+              <div class="w-16 h-16 rounded-xl bg-white/5 border border-red-500/20 flex items-center justify-center relative">
+                <svg class="w-[55%] h-[55%] text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+                  <line x1="12" y1="9" x2="12" y2="13"/>
+                  <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -66,8 +76,11 @@ import { TranslationService } from '../../services/translation.service';
         <!-- Divider / Swipe Indicator -->
         <div class="hidden md:flex flex-col items-center justify-center gap-4 px-2">
           <div class="w-px h-24 bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
-          <div class="w-10 h-10 rounded-full bg-syntra-action-primary flex items-center justify-center shadow-[0_0_20px_rgba(62,255,196,0.4)]">
-            <mat-icon class="text-black font-bold !text-lg !w-auto !h-auto">trending_flat</mat-icon>
+          <div class="w-16 h-16 rounded-full bg-syntra-action-primary flex items-center justify-center shadow-[0_0_30px_rgba(62,255,196,0.3)] relative">
+            <svg class="w-[55%] h-[55%] text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
           </div>
           <div class="w-px h-24 bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
         </div>
@@ -81,7 +94,7 @@ import { TranslationService } from '../../services/translation.service';
             </span>
           </div>
           
-          <div class="relative flex-1 bg-white/10 backdrop-blur-md rounded-[1.5rem] border border-syntra-action-primary/30 p-6 md:p-8 shadow-2xl shadow-syntra-action-primary/10 overflow-hidden group">
+          <div class="relative flex-1 bg-white/10 rounded-[1.5rem] border border-syntra-action-primary/30 p-6 md:p-8 shadow-2xl shadow-syntra-action-primary/10 overflow-hidden group">
             <!-- Clean Background Pattern -->
             <div class="absolute inset-0 opacity-[0.1] pointer-events-none">
               <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-syntra-action-primary/20 via-transparent to-transparent"></div>
@@ -101,8 +114,12 @@ import { TranslationService } from '../../services/translation.service';
 
             <!-- Success Indicators -->
             <div class="absolute bottom-6 right-6 flex gap-2">
-              <mat-icon class="text-syntra-action-primary/40 !text-3xl !w-auto !h-auto">verified</mat-icon>
-              <mat-icon class="text-syntra-action-primary/20 !text-3xl !w-auto !h-auto animate-pulse">check_circle</mat-icon>
+              <div class="w-16 h-16 rounded-xl bg-white/5 border border-syntra-action-primary/30 flex items-center justify-center relative">
+                <svg class="w-[55%] h-[55%] text-syntra-action-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
             </div>
           </div>
         </div>

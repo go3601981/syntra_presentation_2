@@ -63,10 +63,35 @@ import { TranslationService } from '../../services/translation.service';
 
               <!-- Icon & Number -->
               <div class="flex flex-col items-center shrink-0">
-                <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-syntra-action-primary/10 group-hover:border-syntra-action-primary/30 transition-all duration-500">
-                  <mat-icon class="text-white/40 group-hover:text-syntra-action-primary transition-colors duration-500 !text-2xl !w-auto !h-auto">
-                    {{ item.icon }}
-                  </mat-icon>
+                <div class="w-20 h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-syntra-action-primary/10 group-hover:border-syntra-action-primary/30 transition-all duration-500 relative">
+                  @if ($index === 0) {
+                    <!-- Reports (BarChart3) -->
+                    <svg class="w-[55%] h-[55%] text-syntra-action-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 3v18h18"/>
+                      <path d="M18 17V9"/>
+                      <path d="M13 17V5"/>
+                      <path d="M8 17v-3"/>
+                    </svg>
+                  } @else if ($index === 1) {
+                    <!-- Roadmap (Route) -->
+                    <svg class="w-[55%] h-[55%] text-syntra-action-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="6" cy="19" r="3"/>
+                      <path d="M9 19h8.5a3.5 3.5 0 1 0 0-7h-11a3.5 3.5 0 1 1 0-7H15"/>
+                      <circle cx="18" cy="5" r="3"/>
+                    </svg>
+                  } @else if ($index === 2) {
+                    <!-- Strategy (Target) -->
+                    <svg class="w-[55%] h-[55%] text-syntra-action-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"/>
+                      <circle cx="12" cy="12" r="6"/>
+                      <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                  } @else {
+                    <!-- Optimization (Zap) -->
+                    <svg class="w-[55%] h-[55%] text-syntra-action-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                  }
                 </div>
                 <div class="mt-3 font-mono text-[10px] text-white/10 tracking-widest font-bold group-hover:text-syntra-action-primary/40 transition-colors">
                   0{{ $index + 1 }}
@@ -148,10 +173,22 @@ import { TranslationService } from '../../services/translation.service';
 })
 export class SlideElevenComponent {
   deliverables = [
-    { titleKey: 'slide11_deliverables.reports', descKey: 'slide11_deliverables.reports_desc', icon: 'analytics' },
-    { titleKey: 'slide11_deliverables.roadmap', descKey: 'slide11_deliverables.roadmap_desc', icon: 'map' },
-    { titleKey: 'slide11_deliverables.strategy', descKey: 'slide11_deliverables.strategy_desc', icon: 'psychology' },
-    { titleKey: 'slide11_deliverables.optimization', descKey: 'slide11_deliverables.optimization_desc', icon: 'tune' }
+    { 
+      titleKey: 'slide11_deliverables.reports', 
+      descKey: 'slide11_deliverables.reports_desc'
+    },
+    { 
+      titleKey: 'slide11_deliverables.roadmap', 
+      descKey: 'slide11_deliverables.roadmap_desc'
+    },
+    { 
+      titleKey: 'slide11_deliverables.strategy', 
+      descKey: 'slide11_deliverables.strategy_desc'
+    },
+    { 
+      titleKey: 'slide11_deliverables.optimization', 
+      descKey: 'slide11_deliverables.optimization_desc'
+    }
   ];
 
   constructor(public t: TranslationService) {}

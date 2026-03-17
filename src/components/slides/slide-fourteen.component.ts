@@ -44,9 +44,16 @@ import { TranslationService } from '../../services/translation.service';
           
           <!-- Point 1: Left -->
           <div class="point-item group animate-slide-up self-start w-full max-w-xl" style="animation-delay: 0.2s">
-            <div class="flex items-start gap-4">
-              <div class="mt-1 w-8 h-8 md:w-10 md:h-10 rounded-full border border-syntra-action-primary/30 flex items-center justify-center group-hover:bg-syntra-action-primary/10 transition-all duration-500 shrink-0">
-                <mat-icon class="text-syntra-action-primary !text-lg md:!text-xl !w-auto !h-auto">rocket_launch</mat-icon>
+            <div class="flex items-start gap-6">
+              <div class="mt-1 w-20 h-20 md:w-24 md:h-24 rounded-2xl border border-white/10 flex items-center justify-center group-hover:bg-syntra-action-primary/10 transition-all duration-500 shrink-0 relative">
+                <!-- Rocket (Lucide) -->
+                <svg class="w-[55%] h-[55%] text-syntra-action-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                  <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                  <path d="M9 12H4s.5-1 1-4c1.5 0 3 .5 3 .5L9 12z"/>
+                  <path d="M12 15v5s1 .5 4 1c0-1.5-.5-3-.5-3L12 15z"/>
+                  <circle cx="15" cy="9" r="1"/>
+                </svg>
               </div>
               <div>
                 <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tighter mb-1 group-hover:text-syntra-action-primary transition-colors duration-500">
@@ -61,9 +68,14 @@ import { TranslationService } from '../../services/translation.service';
 
           <!-- Point 2: Center -->
           <div class="point-item group animate-slide-up self-center w-full max-w-xl md:translate-x-12" style="animation-delay: 0.4s">
-            <div class="flex items-start gap-4">
-              <div class="mt-1 w-8 h-8 md:w-10 md:h-10 rounded-full border border-emerald-500/30 flex items-center justify-center group-hover:bg-emerald-500/10 transition-all duration-500 shrink-0">
-                <mat-icon class="text-emerald-400 !text-lg md:!text-xl !w-auto !h-auto">verified_user</mat-icon>
+            <div class="flex items-start gap-6">
+              <div class="mt-1 w-20 h-20 md:w-24 md:h-24 rounded-2xl border border-white/10 flex items-center justify-center group-hover:bg-emerald-500/10 transition-all duration-500 shrink-0 relative">
+                <!-- UserCheck (Lucide) -->
+                <svg class="w-[55%] h-[55%] text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <polyline points="16 11 18 13 22 9"/>
+                </svg>
               </div>
               <div>
                 <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tighter mb-1 group-hover:text-emerald-400 transition-colors duration-500">
@@ -78,9 +90,15 @@ import { TranslationService } from '../../services/translation.service';
 
           <!-- Point 3: Right -->
           <div class="point-item group animate-slide-up self-end w-full max-w-xl md:translate-x-24" style="animation-delay: 0.6s">
-            <div class="flex items-start gap-4">
-              <div class="mt-1 w-8 h-8 md:w-10 md:h-10 rounded-full border border-syntra-action-primary/30 flex items-center justify-center group-hover:bg-syntra-action-primary/10 transition-all duration-500 shrink-0">
-                <mat-icon class="text-syntra-action-primary !text-lg md:!text-xl !w-auto !h-auto">sync</mat-icon>
+            <div class="flex items-start gap-6">
+              <div class="mt-1 w-20 h-20 md:w-24 md:h-24 rounded-2xl border border-white/10 flex items-center justify-center group-hover:bg-syntra-action-primary/10 transition-all duration-500 shrink-0 relative">
+                <!-- RefreshCw (Lucide) -->
+                <svg class="w-[55%] h-[55%] text-syntra-action-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+                  <path d="M21 3v5h-5"/>
+                  <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+                  <path d="M3 21v-5h5"/>
+                </svg>
               </div>
               <div>
                 <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tighter mb-1 group-hover:text-syntra-action-primary transition-colors duration-500">
@@ -145,6 +163,21 @@ import { TranslationService } from '../../services/translation.service';
 })
 export class SlideFourteenComponent implements OnInit {
   particles: any[] = [];
+  
+  points = [
+    { 
+      titleKey: 'slide14_why.point1_title', 
+      descKey: 'slide14_why.point1_desc'
+    },
+    { 
+      titleKey: 'slide14_why.point2_title', 
+      descKey: 'slide14_why.point2_desc'
+    },
+    { 
+      titleKey: 'slide14_why.point3_title', 
+      descKey: 'slide14_why.point3_desc'
+    }
+  ];
 
   constructor(public t: TranslationService) {}
 
