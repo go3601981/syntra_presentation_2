@@ -67,7 +67,7 @@ import { TranslationService } from '../../services/translation.service';
           <!-- Background Glow -->
           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-syntra-action-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
 
-          <div class="w-full max-w-2xl space-y-8 z-10">
+          <div class="w-full max-w-2xl space-y-4 z-10">
             
             <!-- Question Section -->
             <div class="space-y-2 animate-fade-in">
@@ -75,40 +75,40 @@ import { TranslationService } from '../../services/translation.service';
                 <span class="w-8 h-[1px] bg-syntra-action-primary/40"></span>
                 User Query
               </div>
-              <h3 class="text-lg md:text-xl lg:text-2xl text-white font-medium leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
+              <h3 class="text-lg md:text-xl text-white font-medium leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
                 "{{ t.translate('slide3.ai_question') }}"
               </h3>
             </div>
 
             <!-- AI Response Section -->
-            <div class="bg-white/[0.03] border border-syntra-action-primary/30 rounded-3xl p-8 md:p-10 relative overflow-hidden backdrop-blur-md shadow-2xl animate-slide-up">
+            <div class="bg-white/[0.03] border border-syntra-action-primary/30 rounded-3xl p-6 md:p-8 relative overflow-hidden backdrop-blur-md shadow-2xl animate-slide-up">
               <!-- Animated Border Top -->
               <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-syntra-action-primary to-transparent animate-scan-x"></div>
               
-              <div class="flex gap-6">
+              <div class="flex gap-4 md:gap-6">
                 <!-- AI Avatar -->
-                <div class="w-12 h-12 rounded-2xl bg-syntra-action-primary/20 flex items-center justify-center shrink-0 border border-syntra-action-primary/40 shadow-[0_0_20px_rgba(62,255,196,0.2)]">
-                  <div class="w-5 h-5 bg-syntra-action-primary rounded-full animate-pulse"></div>
+                <div class="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-syntra-action-primary/20 flex items-center justify-center shrink-0 border border-syntra-action-primary/40 shadow-[0_0_20px_rgba(62,255,196,0.2)]">
+                  <div class="w-4 h-4 md:w-5 md:h-5 bg-syntra-action-primary rounded-full animate-pulse"></div>
                 </div>
 
-                <div class="space-y-6 flex-1">
-                  <div class="text-syntra-action-primary font-mono text-sm uppercase tracking-[0.2em] font-bold">
+                <div class="space-y-4 flex-1">
+                  <div class="text-syntra-action-primary font-mono text-xs md:text-sm uppercase tracking-[0.2em] font-bold">
                     {{ t.translate('slide3.ai_response_title') }}
                   </div>
                   
-                  <div class="space-y-4">
-                    <p class="text-white/90 text-xl leading-relaxed font-light">
+                  <div class="space-y-3">
+                    <p class="text-white/90 text-lg md:text-xl leading-relaxed font-light">
                       {{ t.translate('slide3.ai_response_body') }}
                     </p>
                   </div>
 
                   <!-- Sources -->
-                  <div class="pt-8 flex flex-wrap gap-3">
-                    <div class="px-4 py-2 bg-white/5 rounded-xl border border-white/10 text-xs text-white/60 flex items-center gap-2 hover:bg-white/10 transition-all cursor-pointer group">
+                  <div class="pt-4 flex flex-wrap gap-2 md:gap-3">
+                    <div class="px-3 py-1.5 md:px-4 md:py-2 bg-white/5 rounded-xl border border-white/10 text-[10px] md:text-xs text-white/60 flex items-center gap-2 hover:bg-white/10 transition-all cursor-pointer group">
                       <span class="w-1.5 h-1.5 rounded-full bg-syntra-action-primary group-hover:scale-125 transition-transform"></span>
                       {{ t.translate('slide3.ai_source_1') }}
                     </div>
-                    <div class="px-4 py-2 bg-white/5 rounded-xl border border-white/10 text-xs text-white/60 flex items-center gap-2 hover:bg-white/10 transition-all cursor-pointer group">
+                    <div class="px-3 py-1.5 md:px-4 md:py-2 bg-white/5 rounded-xl border border-white/10 text-[10px] md:text-xs text-white/60 flex items-center gap-2 hover:bg-white/10 transition-all cursor-pointer group">
                       <span class="w-1.5 h-1.5 rounded-full bg-syntra-action-primary group-hover:scale-125 transition-transform"></span>
                       {{ t.translate('slide3.ai_source_2') }}
                     </div>
