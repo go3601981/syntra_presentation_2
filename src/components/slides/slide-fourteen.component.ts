@@ -1,0 +1,166 @@
+import { Component, ChangeDetectionStrategy, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { TranslationService } from '../../services/translation.service';
+
+@Component({
+  selector: 'app-slide-fourteen',
+  standalone: true,
+  imports: [CommonModule, MatIconModule],
+  template: `
+    <div class="relative w-full h-full bg-slate-950 flex flex-col p-6 md:p-12 lg:px-20 lg:py-10 overflow-hidden">
+      
+      <!-- Particle Background -->
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="particles-container absolute inset-0">
+          @for (p of particles; track $index) {
+            <div 
+              class="particle absolute rounded-full bg-syntra-action-primary/20"
+              [style.width.px]="p.size"
+              [style.height.px]="p.size"
+              [style.left.%]="p.x"
+              [style.top.%]="p.y"
+              [style.animation-duration.s]="p.duration"
+              [style.animation-delay.s]="p.delay"
+            ></div>
+          }
+        </div>
+      </div>
+
+      <!-- Neon Glow Accents -->
+      <div class="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-syntra-action-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+      <div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none"></div>
+
+      <!-- Content Section -->
+      <div class="relative z-10 flex flex-col h-full justify-center">
+        
+        <div class="mb-6 animate-fade-in">
+          <h2 class="text-syntra-action-primary font-mono text-xs md:text-sm font-bold uppercase tracking-[0.4em] mb-2">
+            {{ t.translate('slide14_why.title') }}
+          </h2>
+        </div>
+
+        <div class="flex flex-col gap-4 md:gap-6 w-full">
+          
+          <!-- Point 1: Left -->
+          <div class="point-item group animate-slide-up self-start w-full max-w-xl" style="animation-delay: 0.2s">
+            <div class="flex items-start gap-4">
+              <div class="mt-1 w-8 h-8 md:w-10 md:h-10 rounded-full border border-syntra-action-primary/30 flex items-center justify-center group-hover:bg-syntra-action-primary/10 transition-all duration-500 shrink-0">
+                <mat-icon class="text-syntra-action-primary !text-lg md:!text-xl !w-auto !h-auto">rocket_launch</mat-icon>
+              </div>
+              <div>
+                <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tighter mb-1 group-hover:text-syntra-action-primary transition-colors duration-500">
+                  {{ t.translate('slide14_why.point1') }}
+                </h3>
+                <p class="text-slate-400 text-sm md:text-base font-light leading-relaxed">
+                  {{ t.translate('slide14_why.point1_desc') }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Point 2: Center -->
+          <div class="point-item group animate-slide-up self-center w-full max-w-xl md:translate-x-12" style="animation-delay: 0.4s">
+            <div class="flex items-start gap-4">
+              <div class="mt-1 w-8 h-8 md:w-10 md:h-10 rounded-full border border-emerald-500/30 flex items-center justify-center group-hover:bg-emerald-500/10 transition-all duration-500 shrink-0">
+                <mat-icon class="text-emerald-400 !text-lg md:!text-xl !w-auto !h-auto">verified_user</mat-icon>
+              </div>
+              <div>
+                <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tighter mb-1 group-hover:text-emerald-400 transition-colors duration-500">
+                  {{ t.translate('slide14_why.point2') }}
+                </h3>
+                <p class="text-slate-400 text-sm md:text-base font-light leading-relaxed">
+                  {{ t.translate('slide14_why.point2_desc') }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Point 3: Right -->
+          <div class="point-item group animate-slide-up self-end w-full max-w-xl md:translate-x-24" style="animation-delay: 0.6s">
+            <div class="flex items-start gap-4">
+              <div class="mt-1 w-8 h-8 md:w-10 md:h-10 rounded-full border border-syntra-action-primary/30 flex items-center justify-center group-hover:bg-syntra-action-primary/10 transition-all duration-500 shrink-0">
+                <mat-icon class="text-syntra-action-primary !text-lg md:!text-xl !w-auto !h-auto">sync</mat-icon>
+              </div>
+              <div>
+                <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tighter mb-1 group-hover:text-syntra-action-primary transition-colors duration-500">
+                  {{ t.translate('slide14_why.point3') }}
+                </h3>
+                <p class="text-slate-400 text-sm md:text-base font-light leading-relaxed">
+                  {{ t.translate('slide14_why.point3_desc') }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Footer Branding -->
+      <div class="absolute bottom-6 left-16 opacity-20 animate-fade-in" style="animation-delay: 1.2s">
+        <span class="text-slate-400 font-mono text-[10px] uppercase tracking-[0.6em]">
+          Syntra Advisory &copy; 2026
+        </span>
+      </div>
+
+    </div>
+  `,
+  styles: [`
+    :host {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .particle {
+      animation: float infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); opacity: 0.2; }
+      50% { transform: translate(20px, -40px); opacity: 0.5; }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    .animate-slide-up {
+      opacity: 0;
+      animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  `],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class SlideFourteenComponent implements OnInit {
+  particles: any[] = [];
+
+  constructor(public t: TranslationService) {}
+
+  ngOnInit() {
+    this.generateParticles();
+  }
+
+  generateParticles() {
+    for (let i = 0; i < 30; i++) {
+      this.particles.push({
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 4 + 2,
+        duration: Math.random() * 10 + 10,
+        delay: Math.random() * 5
+      });
+    }
+  }
+}

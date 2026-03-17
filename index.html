@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syntra Advisory Executive Deck</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            syntra: {
+              bg: {
+                page: '#FFFFFF',
+                subtle: '#F8F9FA',
+                alt: '#F4F6F8',
+                dark: '#0F1115'
+              },
+              text: {
+                primary: '#0F1115',
+                secondary: '#38424F',
+                muted: '#505A66',
+                inverse: '#FFFFFF',
+                accent: '#0B7A58'
+              },
+              action: {
+                primary: '#3EFFC4',
+                primaryHover: '#2EDDB0',
+                primaryText: '#0F1115',
+                link: '#2F3844',
+                linkHover: '#0F1115'
+              },
+              border: {
+                default: '#E1E4E8',
+                soft: 'rgba(0,0,0,0.05)',
+                inverse: 'rgba(255,255,255,0.12)',
+                focus: '#3EFFC4'
+              },
+              feedback: {
+                success: '#B8F6DF',
+                error: '#FF8F8F'
+              }
+            }
+          },
+          fontFamily: {
+            sans: ['"Segoe UI"', 'system-ui', '-apple-system', 'Roboto', 'Arial', 'sans-serif']
+          },
+          fontWeight: {
+            light: 300,
+            regular: 400,
+            medium: 500,
+            semibold: 600,
+            bold: 700
+          },
+          fontSize: {
+            xs: '12px',
+            sm: '14px',
+            md: '16px',
+            lg: '18px',
+            xl: '20px',
+            '2xl': '24px',
+            '3xl': '30px',
+            '4xl': '36px',
+            '5xl': '42px',
+            '6xl': '48px',
+            '7xl': '52px'
+          },
+          lineHeight: {
+            tight: 1.2,
+            heading: 1.25,
+            body: 1.6
+          },
+          letterSpacing: {
+            tight: '-1px',
+            normal: '0px',
+            wide: '0.5px',
+            caps: '2px'
+          },
+          spacing: {
+            '1': '4px',
+            '2': '8px',
+            '3': '12px',
+            '4': '16px',
+            '5': '20px',
+            '6': '24px',
+            '7': '30px',
+            '8': '40px',
+            '9': '48px',
+            '10': '60px',
+            '11': '80px',
+            '12': '90px',
+            '13': '100px',
+            '14': '120px',
+            '15': '140px'
+          },
+          borderRadius: {
+            sm: '4px',
+            md: '6px',
+            lg: '8px',
+            xl: '12px',
+            '2xl': '14px'
+          },
+          boxShadow: {
+            md: '0 10px 30px rgba(0,0,0,0.05)',
+            lg: '0 20px 40px rgba(0,0,0,0.08)',
+            xl: '0 28px 50px rgba(0,0,0,0.14)',
+            overlay: '0 20px 56px rgba(0,0,0,0.4)'
+          },
+          transitionDuration: {
+            fast: '0.2s',
+            base: '0.3s',
+            slow: '0.45s',
+            reveal: '0.75s'
+          },
+          transitionTimingFunction: {
+            easing: 'cubic-bezier(0.2, 0.65, 0.2, 1)'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+      background-color: #FFFFFF;
+      color: #0F1115;
+      overflow: hidden;
+      line-height: 1.6;
+    }
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "rxjs": "https://esm.sh/rxjs@^7.8.2?conditions=es2015",
+    "rxjs/operators": "https://esm.sh/rxjs@^7.8.2/operators?conditions=es2015",
+    "rxjs/ajax": "https://esm.sh/rxjs@^7.8.2/ajax?conditions=es2015",
+    "rxjs/webSocket": "https://esm.sh/rxjs@^7.8.2/webSocket?conditions=es2015",
+    "rxjs/testing": "https://esm.sh/rxjs@^7.8.2/testing?conditions=es2015",
+    "rxjs/fetch": "https://esm.sh/rxjs@^7.8.2/fetch?conditions=es2015",
+    "@angular/compiler": "https://esm.sh/@angular/compiler@^21.1.2?external=rxjs",
+    "@angular/platform-browser": "https://esm.sh/@angular/platform-browser@^21.1.2?external=rxjs",
+    "@angular/core": "https://esm.sh/@angular/core@^21.1.2?external=rxjs",
+    "@angular/common": "https://esm.sh/@angular/common@^21.1.2?external=rxjs"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>

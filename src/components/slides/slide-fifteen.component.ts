@@ -1,0 +1,168 @@
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { TranslationService } from '../../services/translation.service';
+
+@Component({
+  selector: 'app-slide-fifteen',
+  standalone: true,
+  imports: [CommonModule, MatIconModule],
+  template: `
+    <div class="relative w-full h-full bg-[#050505] flex flex-col items-center justify-center p-6 md:p-12 overflow-hidden">
+      
+      <!-- Digital Noise Overlay -->
+      <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none noise-bg"></div>
+
+      <!-- Animated Neural Gateway Background -->
+      <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+        <div class="relative w-[600px] h-[600px] md:w-[800px] md:h-[800px]">
+          <!-- Concentric Rings -->
+          <div class="absolute inset-0 border border-syntra-action-primary/10 rounded-full animate-ping-slow"></div>
+          <div class="absolute inset-12 border border-syntra-action-primary/20 rounded-full animate-ping-slow" style="animation-delay: 1s"></div>
+          <div class="absolute inset-24 border border-syntra-action-primary/30 rounded-full animate-ping-slow" style="animation-delay: 2s"></div>
+          
+          <!-- Rotating Data Particles -->
+          <div class="absolute inset-0 animate-spin-slow">
+            @for (i of [1,2,3,4,5,6,7,8]; track i) {
+              <div 
+                class="absolute w-1 h-1 bg-syntra-action-primary rounded-full blur-[1px]"
+                [style.top.%]="50 + 45 * Math.cos(i * Math.PI / 4)"
+                [style.left.%]="50 + 45 * Math.sin(i * Math.PI / 4)"
+              ></div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Container -->
+      <div class="relative z-10 w-full max-w-6xl flex flex-col items-center text-center">
+        
+        <!-- Header -->
+        <div class="mb-6 md:mb-8 animate-fade-in">
+          <h2 class="text-syntra-action-primary font-mono text-xs md:text-sm font-bold uppercase tracking-[0.5em] mb-2">
+            {{ t.translate('slide15_cta.title') }}
+          </h2>
+          <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-[0.85] mb-4">
+            OWN YOUR<br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-syntra-action-primary via-white to-syntra-action-primary bg-[length:200%_auto] animate-gradient-text">
+              AI FUTURE
+            </span>
+          </h1>
+          <p class="text-white/40 text-sm md:text-base font-light max-w-xl mx-auto leading-relaxed">
+            {{ t.translate('slide15_cta.subtitle') }}
+          </p>
+        </div>
+
+        <!-- Impactful CTA Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full max-w-4xl mb-6 md:mb-8">
+          
+          @for (cta of ctas; track $index) {
+            <button 
+              class="cta-button group relative p-6 md:p-8 bg-white/[0.03] border border-white/10 rounded-[2rem] transition-all duration-700 hover:bg-white/[0.07] hover:border-syntra-action-primary/40 hover:-translate-y-2 overflow-hidden"
+              [style.animation-delay.s]="$index * 0.2"
+            >
+              <!-- Hover Glow -->
+              <div class="absolute inset-0 bg-gradient-to-br from-syntra-action-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+              <div class="relative z-10 flex flex-col items-center">
+                <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-syntra-action-primary/10 group-hover:border-syntra-action-primary/40 transition-all duration-500">
+                  <mat-icon class="text-white/40 group-hover:text-syntra-action-primary transition-colors duration-500 !text-3xl md:!text-4xl !w-auto !h-auto">
+                    {{ cta.icon }}
+                  </mat-icon>
+                </div>
+                
+                <h3 class="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-syntra-action-primary transition-colors">
+                  {{ t.translate(cta.labelKey) }}
+                </h3>
+                <p class="text-white/30 text-xs md:text-sm font-light leading-relaxed group-hover:text-white/60 transition-colors max-w-[280px]">
+                  {{ t.translate(cta.descKey) }}
+                </p>
+
+                <div class="mt-6 flex items-center gap-3 text-syntra-action-primary font-mono text-[10px] uppercase tracking-[0.3em] font-bold opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                  <span>Initialize</span>
+                  <mat-icon class="!text-xs !w-auto !h-auto">arrow_forward</mat-icon>
+                </div>
+              </div>
+            </button>
+          }
+
+        </div>
+
+        <!-- Secondary Action -->
+        <div class="animate-fade-in" style="animation-delay: 1.2s">
+          <button class="group relative px-8 py-3 bg-syntra-action-primary rounded-full overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(62,255,196,0.4)]">
+            <div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
+            <span class="relative z-10 text-black font-black uppercase tracking-[0.2em] text-[10px] md:text-xs">
+              {{ t.translate('slide15_cta.cta') }}
+            </span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Footer Branding -->
+      <div class="absolute bottom-4 md:bottom-8 left-0 right-0 text-center opacity-40 animate-fade-in" style="animation-delay: 1.5s">
+        <span class="text-white font-mono text-sm md:text-base uppercase tracking-[0.6em] font-bold">
+          Syntra Advisory &copy; 2026
+        </span>
+      </div>
+
+    </div>
+  `,
+  styles: [`
+    :host {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .noise-bg {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .cta-button {
+      opacity: 0;
+      animation: ctaFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes ctaFadeUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 1.5s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .animate-ping-slow {
+      animation: ping 4s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    .animate-spin-slow {
+      animation: spin 20s linear infinite;
+    }
+
+    @keyframes gradient-text {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  `],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class SlideFifteenComponent {
+  Math = Math;
+  
+  ctas = [
+    { labelKey: 'slide15_cta.brief', descKey: 'slide15_cta.brief_desc', icon: 'auto_awesome' },
+    { labelKey: 'slide15_cta.ongoing', descKey: 'slide15_cta.ongoing_desc', icon: 'psychology' }
+  ];
+
+  constructor(public t: TranslationService) {}
+}
