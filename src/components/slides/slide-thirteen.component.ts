@@ -24,7 +24,7 @@ import { TranslationService } from '../../services/translation.service';
       <div class="relative z-10 flex flex-col md:flex-row gap-4 w-full max-w-6xl mx-auto mt-auto mb-8">
         
         <!-- One-Time Block -->
-        <div class="flex-1 pricing-block group p-6 bg-slate-50 rounded-[2rem] border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.08)]">
+        <div class="flex-1 pricing-block group p-6 bg-slate-50 rounded-[2rem] border border-slate-300 transition-all duration-500 hover:bg-white hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.08)]">
           <div class="flex items-center justify-between mb-6">
             <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center border border-slate-100 group-hover:border-syntra-action-primary/30 transition-colors duration-500">
               <mat-icon class="text-slate-400 group-hover:text-syntra-action-primary transition-colors duration-500 !text-2xl !w-auto !h-auto">
@@ -91,8 +91,8 @@ import { TranslationService } from '../../services/translation.service';
       </div>
 
       <!-- Footer Branding -->
-      <div class="absolute bottom-6 left-16 opacity-40 animate-fade-in" style="animation-delay: 1s">
-        <span class="text-slate-400 font-mono text-[10px] uppercase tracking-[0.6em]">
+      <div class="absolute bottom-6 left-16 opacity-60 animate-fade-in" style="animation-delay: 1s">
+        <span class="text-slate-400 font-mono text-xs uppercase tracking-[0.6em]">
           Syntra Advisory &copy; 2026
         </span>
       </div>

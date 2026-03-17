@@ -53,7 +53,7 @@ import { TranslationService } from '../../services/translation.service';
             {{ t.translate('slide6_problem.title') }}
           </h2>
         </div>
-        <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-[0.85] mb-4 glitch-text" data-text="THE VISIBILITY GAP">
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-[0.85] mb-4">
           {{ t.translate('slide6_problem.main_title') }}
         </h1>
         <div class="h-1.5 w-32 bg-gradient-to-r from-red-600 to-transparent rounded-full shadow-[0_0_20px_rgba(255,68,68,0.4)]"></div>
@@ -103,42 +103,6 @@ import { TranslationService } from '../../services/translation.service';
   styles: [`
     .noise-bg {
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    }
-
-    .glitch-text {
-      position: relative;
-    }
-
-    .glitch-text::before,
-    .glitch-text::after {
-      content: attr(data-text);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.8;
-    }
-
-    .glitch-text::before {
-      color: #ff4444;
-      z-index: -1;
-      animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-    }
-
-    .glitch-text::after {
-      color: #3EFFC4;
-      z-index: -2;
-      animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
-    }
-
-    @keyframes glitch {
-      0% { transform: translate(0); }
-      20% { transform: translate(-3px, 3px); }
-      40% { transform: translate(-3px, -3px); }
-      60% { transform: translate(3px, 3px); }
-      80% { transform: translate(3px, -3px); }
-      100% { transform: translate(0); }
     }
 
     .animate-glitch-scan {

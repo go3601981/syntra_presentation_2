@@ -430,10 +430,10 @@ export class TranslationService {
 
     // Slide 4: Impact (Dramatic Statement)
     'slide4.statement': {
-      en: 'If AI doesn’t understand your brand, you don’t exist.',
-      es: 'Si la IA no entiende tu marca, no existes.',
-      de: 'Wenn KI deine Marke nicht versteht, existierst du nicht.',
-      pt: 'Se a IA não entende sua marca, você não existe.'
+      en: 'If AI doesn’t recognize your brand, it may never enter the conversation.',
+      es: 'Si la IA no reconoce tu marca, es posible que nunca entre en la conversación.',
+      de: 'Wenn die KI Ihre Marke nicht erkennt, wird sie möglicherweise nie Teil des Gesprächs.',
+      pt: 'Se a IA não reconhecer sua marca, ela poderá nunca entrar na conversa.'
     },
 
     // Slide 5: Live Example (Impact)

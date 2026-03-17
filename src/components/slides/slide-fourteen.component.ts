@@ -98,8 +98,8 @@ import { TranslationService } from '../../services/translation.service';
       </div>
 
       <!-- Footer Branding -->
-      <div class="absolute bottom-6 left-16 opacity-20 animate-fade-in" style="animation-delay: 1.2s">
-        <span class="text-slate-400 font-mono text-[10px] uppercase tracking-[0.6em]">
+      <div class="absolute bottom-6 left-16 opacity-60 animate-fade-in" style="animation-delay: 1.2s">
+        <span class="text-slate-400 font-mono text-xs uppercase tracking-[0.6em]">
           Syntra Advisory &copy; 2026
         </span>
       </div>
