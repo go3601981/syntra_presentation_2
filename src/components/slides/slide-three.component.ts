@@ -7,7 +7,7 @@ import { TranslationService } from '../../services/translation.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="relative w-full h-full bg-[#050505] overflow-hidden flex flex-col">
+    <div class="relative w-full h-full bg-[#050505] overflow-hidden flex flex-col pb-24 lg:pb-24">
       
       <!-- Header Overlay -->
       <div class="absolute top-8 left-0 w-full z-30 text-center pointer-events-none">
@@ -21,10 +21,10 @@ import { TranslationService } from '../../services/translation.service';
       </div>
 
       <!-- Main Content Split -->
-      <div class="flex-1 flex relative">
+      <div class="flex-1 flex flex-col lg:flex-row relative">
         
         <!-- Left: Chaos (Traditional Search) -->
-        <div class="w-1/2 h-full bg-[#0a0a0a] border-r border-white/5 relative overflow-hidden">
+        <div class="w-full lg:w-1/2 h-1/2 lg:h-full bg-[#0a0a0a] border-b lg:border-b-0 lg:border-r border-white/5 relative overflow-hidden">
           <!-- Scrolling Content -->
           <div class="absolute inset-0 p-8 pt-32 animate-scroll-chaos space-y-6">
             @for (i of [1,2,3,4,5,6]; track i) {
@@ -62,7 +62,7 @@ import { TranslationService } from '../../services/translation.service';
         </div>
 
         <!-- Right: Order (AI Answer) -->
-        <div class="w-1/2 h-full bg-[#050505] relative flex items-center justify-center p-12 pt-32">
+        <div class="w-full lg:w-1/2 h-1/2 lg:h-full bg-[#050505] relative flex items-center justify-center p-6 md:p-12 pt-16 lg:pt-32">
           
           <!-- Background Glow -->
           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-syntra-action-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
@@ -73,9 +73,9 @@ import { TranslationService } from '../../services/translation.service';
             <div class="space-y-2 animate-fade-in">
               <div class="flex items-center gap-3 text-syntra-action-primary/60 font-mono text-xs uppercase tracking-widest">
                 <span class="w-8 h-[1px] bg-syntra-action-primary/40"></span>
-                User Query
+                {{ t.translate('common.user_query') }}
               </div>
-              <h3 class="text-lg md:text-xl text-white font-medium leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
+              <h3 class="text-lg md:text-xl text-white font-medium leading-tight">
                 "{{ t.translate('slide3.ai_question') }}"
               </h3>
             </div>
@@ -86,11 +86,6 @@ import { TranslationService } from '../../services/translation.service';
               <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-syntra-action-primary to-transparent animate-scan-x"></div>
               
               <div class="flex gap-4 md:gap-6">
-                <!-- AI Avatar -->
-                <div class="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-syntra-action-primary/20 flex items-center justify-center shrink-0 border border-syntra-action-primary/40 shadow-[0_0_20px_rgba(62,255,196,0.2)]">
-                  <div class="w-4 h-4 md:w-5 md:h-5 bg-syntra-action-primary rounded-full animate-pulse"></div>
-                </div>
-
                 <div class="space-y-4 flex-1">
                   <div class="text-syntra-action-primary font-mono text-xs md:text-sm uppercase tracking-[0.2em] font-bold">
                     {{ t.translate('slide3.ai_response_title') }}

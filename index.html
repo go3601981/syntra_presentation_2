@@ -134,6 +134,49 @@
       width: 0px;
       background: transparent;
     }
+    
+    /* Make ALL icons occupy 55% of their containers */
+    mat-icon, 
+    .material-icons,
+    button svg,
+    .icon-container svg,
+    svg.icon {
+      width: 55% !important;
+      height: 55% !important;
+      aspect-ratio: 1 / 1 !important;
+      font-size: calc(var(--icon-container-size, 1em) * 0.55) !important;
+      line-height: 1 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    /* If mat-icon is used, ensure it scales correctly */
+    mat-icon {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    /* Ensure internal SVGs fill the 55% container */
+    mat-icon svg,
+    .material-icons svg {
+      width: 100% !important;
+      height: 100% !important;
+      aspect-ratio: 1 / 1 !important;
+    }
+
+    /* Reset for font-based icons */
+    .material-icons {
+      font-size: 1.5rem; /* Base size, will be overridden by 55% logic if parent has size */
+    }
+    
+    /* Global override for any SVG that is clearly an icon (small viewBox or inside a small container) */
+    svg:not(.w-full):not(.h-full):not([width="100%"]):not([height="100%"]):not([preserveAspectRatio="xMidYMid slice"]) {
+      width: 55% !important;
+      height: 55% !important;
+      aspect-ratio: 1 / 1 !important;
+    }
   </style>
 <script type="importmap">
 {

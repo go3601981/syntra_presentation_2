@@ -29,19 +29,19 @@ import { TranslationService, Language } from '../../services/translation.service
           <button 
             (click)="presentation.prevSlide()"
             [disabled]="presentation.isFirstSlide()"
-            class="p-2 rounded-full hover:bg-syntra-bg-subtle disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-fast text-syntra-text-primary"
+            class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-syntra-bg-subtle disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-fast text-syntra-text-primary"
             [attr.aria-label]="t.translate('nav.prev')"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            <svg class="w-[55%] h-[55%]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
           </button>
           
           <button 
             (click)="presentation.nextSlide()"
             [disabled]="presentation.isLastSlide()"
-            class="p-2 rounded-full hover:bg-syntra-bg-subtle disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-fast text-syntra-text-primary"
+            class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-syntra-bg-subtle disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-fast text-syntra-text-primary"
             [attr.aria-label]="t.translate('nav.next')"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            <svg class="w-[55%] h-[55%]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
           </button>
         </div>
 

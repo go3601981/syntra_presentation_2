@@ -8,7 +8,7 @@ import { TranslationService } from '../../services/translation.service';
   standalone: true,
   imports: [CommonModule, MatIconModule],
   template: `
-    <div class="relative w-full h-full bg-[#050505] flex flex-col p-6 md:p-12 lg:px-20 lg:py-10 overflow-hidden">
+    <div class="relative w-full h-full bg-[#050505] flex flex-col p-6 md:p-12 lg:px-20 lg:py-10 pb-24 lg:pb-24 overflow-hidden">
       
       <!-- Digital Noise Overlay -->
       <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none noise-bg"></div>
@@ -42,9 +42,9 @@ import { TranslationService } from '../../services/translation.service';
           </h2>
         </div>
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-[0.9] max-w-5xl">
-          THE ASSETS OF<br/>
+          {{ t.translate('slide11.assets_of') }}<br/>
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-syntra-action-primary to-emerald-400">
-            AI AUTHORITY
+            {{ t.translate('slide11.ai_authority') }}
           </span>
         </h1>
       </div>

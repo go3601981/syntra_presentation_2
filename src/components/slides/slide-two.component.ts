@@ -7,7 +7,7 @@ import { TranslationService } from '../../services/translation.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="w-full h-full bg-black flex items-center justify-center p-10 overflow-hidden relative">
+    <div class="w-full h-full bg-black flex items-center justify-center p-10 pb-24 lg:pb-24 overflow-hidden relative">
       <!-- Subtle Glitch Overlay -->
       <div class="absolute inset-0 pointer-events-none glitch-overlay opacity-[0.02]"></div>
       

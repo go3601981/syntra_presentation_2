@@ -7,7 +7,7 @@ import { TranslationService } from '../../services/translation.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="relative w-full h-full bg-black overflow-hidden flex flex-col items-center justify-center">
+    <div class="relative w-full h-full bg-black overflow-hidden flex flex-col items-center justify-center pb-24 lg:pb-24">
       
       <!-- Background Particles Layer -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -55,7 +55,7 @@ import { TranslationService } from '../../services/translation.service';
         <!-- Subtext / Category Label -->
         <div class="mt-12 md:mt-16 animate-fade-in-up">
           <span class="px-6 py-2 border border-white/20 rounded-full text-white/60 font-mono text-xs md:text-sm uppercase tracking-[0.4em]">
-            New Category Defined
+            {{ t.translate('slide7_category.new_category') }}
           </span>
         </div>
       </div>

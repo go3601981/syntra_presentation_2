@@ -48,6 +48,7 @@ export class TranslationService {
     // Slide 3: The Shift (Split Screen)
     'slide3.search': { en: 'Search', de: 'Suche', pt: 'Busca', es: 'Búsqueda' },
     'slide3.ai_answers': { en: 'AI Answers', de: 'KI-Antworten', pt: 'Respostas de IA', es: 'Respuestas de IA' },
+    'common.user_query': { en: 'User Query', de: 'Benutzeranfrage', pt: 'Consulta do Usuário', es: 'Consulta del Usuario' },
     'slide3.ai_question': { 
       en: 'What is Syntra Advisory?', 
       es: '¿Qué es Syntra Advisory?',
@@ -264,6 +265,8 @@ export class TranslationService {
     'slide10.s_task3': { en: 'Brand authority', de: 'Markenautorität', pt: 'Autoridade da marca', es: 'Autoridad de marca' },
 
     // Slide 11: What They Get
+    'slide11.assets_of': { en: 'THE ASSETS OF', de: 'DIE ASSETS VON', pt: 'OS ATIVOS DA', es: 'LOS ACTIVOS DE' },
+    'slide11.ai_authority': { en: 'AI AUTHORITY', de: 'KI-AUTORITÄT', pt: 'AUTORIDADE DE IA', es: 'AUTORIDAD DE IA' },
     'slide11.title': { 
       en: 'What You Receive', 
       de: 'Was Sie erhalten', 
@@ -468,6 +471,14 @@ export class TranslationService {
       pt: 'LACUNA DE DADOS CRÍTICA DETECTADA'
     },
 
+    'slide5.visibility_gap': { en: 'The Visibility Gap', de: 'Die Sichtbarkeitslücke', pt: 'A Lacuna de Visibilidade', es: 'La Brecha de Visibilidad' },
+    'slide5.inaccurate_data': { en: 'Inaccurate data leads to', de: 'Ungenaue Daten führen zu', pt: 'Dados imprecisos levam a', es: 'Los datos inexactos conducen a' },
+    'slide5.brand_erosion': { en: 'brand erosion', de: 'Markenerosion', pt: 'erosão da marca', es: 'erosión de la marca' },
+    'slide5.ai_agent_response': { en: 'AI Agent Response', de: 'KI-Agenten-Antwort', pt: 'Resposta do Agente de IA', es: 'Respuesta del Agente de IA' },
+    'slide5.waiting_reindexing': { en: 'Waiting for re-indexing...', de: 'Warten auf Re-Indizierung...', pt: 'Aguardando reindexação...', es: 'Esperando reindexación...' },
+    'slide5.source_404': { en: 'Source: 404_NOT_FOUND', de: 'Quelle: 404_NOT_FOUND', pt: 'Fonte: 404_NOT_FOUND', es: 'Fuente: 404_NOT_FOUND' },
+    'slide5.confidence_12': { en: 'Confidence: 12%', de: 'Konfidenz: 12%', pt: 'Confiança: 12%', es: 'Confianza: 12%' },
+
     // Slide 6: The Problem (Clean)
     'slide6_problem.title': {
       en: 'The Problem',
@@ -537,6 +548,12 @@ export class TranslationService {
       de: 'KI-Repräsentation',
       pt: 'Representação em IA'
     },
+    'slide7_category.new_category': {
+      en: 'New Category Defined',
+      es: 'Nueva Categoría Definida',
+      de: 'Neue Kategorie Definiert',
+      pt: 'Nova Categoria Definida'
+    },
 
     // Slide 8: What is Syntra (Clean)
     'slide8_definition.text': {
@@ -547,6 +564,9 @@ export class TranslationService {
     },
 
     // Slide 9: What We Do (Clean)
+    'slide9.transformation': { en: 'The Transformation', de: 'Die Transformation', pt: 'A Transformação', es: 'La Transformación' },
+    'slide9.from_chaos': { en: 'FROM CHAOS', de: 'VOM CHAOS', pt: 'DO CAOS', es: 'DEL CAOS' },
+    'slide9.to_order': { en: 'TO ORDER', de: 'ZUR ORDNUNG', pt: 'PARA A ORDEM', es: 'AL ORDEN' },
     'slide9_services.title': {
       en: 'What We Do',
       es: 'Qué Hacemos',
@@ -731,6 +751,18 @@ export class TranslationService {
       de: 'Kontinuierliche Überwachung, Indexierungsoptimierung und Autoritätsskalierung.',
       pt: 'Monitoramento contínuo, otimização de indexação e escalonamento de autoridade.'
     },
+    'slide13_model.foundation': {
+      en: 'Foundation',
+      es: 'Base',
+      de: 'Grundlage',
+      pt: 'Fundação'
+    },
+    'slide13_model.continuity': {
+      en: 'Continuity',
+      es: 'Continuidad',
+      de: 'Kontinuität',
+      pt: 'Continuidade'
+    },
     'slide13_model.setup_label': { en: 'Setup & Strategy', es: 'Configuración y Estrategia', de: 'Setup & Strategie', pt: 'Configuração e Estratégia' },
     'slide13_model.ongoing_label': { en: 'Growth & Authority', es: 'Crecimiento y Autoridad', de: 'Wachstum & Autorität', pt: 'Crescimento e Autoridade' },
 
@@ -779,6 +811,9 @@ export class TranslationService {
     },
 
     // Slide 15: CTA (Impact Light Hybrid)
+    'slide15.own_your': { en: 'OWN YOUR', de: 'BESITZEN SIE IHRE', pt: 'TENHA SUA', es: 'SÉ DUEÑO DE TU' },
+    'slide15.ai_future': { en: 'AI FUTURE', de: 'KI-ZUKUNFT', pt: 'FUTURO DA IA', es: 'FUTURO DE IA' },
+    'slide15.initialize': { en: 'Initialize', de: 'Initialisieren', pt: 'Inicializar', es: 'Inicializar' },
     'slide15_cta.title': {
       en: 'Ready to Start?',
       es: '¿Listo para Comenzar?',

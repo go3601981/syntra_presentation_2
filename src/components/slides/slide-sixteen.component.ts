@@ -7,7 +7,7 @@ import { TranslationService } from '../../services/translation.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="relative w-full h-full bg-black flex items-center justify-center p-8 md:p-16 overflow-hidden">
+    <div class="relative w-full h-full bg-black flex items-center justify-center p-8 md:p-16 pb-24 lg:pb-24 overflow-hidden">
       
       <!-- Cinematic Glow Pulse -->
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -23,8 +23,8 @@ import { TranslationService } from '../../services/translation.service';
         <!-- Final Branding -->
         <div class="mt-24 animate-fade-in-slow">
           <div class="flex flex-col items-center gap-6">
-            <div class="w-12 h-px bg-syntra-action-primary/40"></div>
-            <span class="text-slate-500 font-mono text-[10px] md:text-xs uppercase tracking-[0.8em]">
+            <div class="w-12 h-px bg-syntra-action-primary"></div>
+            <span class="text-slate-300 font-mono text-[10px] md:text-xs uppercase tracking-[0.8em]">
               Syntra Advisory
             </span>
           </div>
@@ -71,7 +71,7 @@ import { TranslationService } from '../../services/translation.service';
 
     @keyframes fadeInSlow {
       from { opacity: 0; }
-      to { opacity: 0.4; }
+      to { opacity: 1; }
     }
   `],
   changeDetection: ChangeDetectionStrategy.OnPush

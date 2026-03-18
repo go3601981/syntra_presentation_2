@@ -50,7 +50,7 @@ import { SlideSixteenComponent } from './components/slides/slide-sixteen.compone
     <main 
       #mainContainer 
       tabindex="0" 
-      class="w-full h-screen bg-syntra-bg-page overflow-y-auto relative pb-24 lg:pb-20 outline-none"
+      class="w-full h-screen bg-syntra-bg-page overflow-hidden relative outline-none"
     >
       
       @switch (presentation.currentSlideIndex()) {

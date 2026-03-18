@@ -8,18 +8,18 @@ import { TranslationService } from '../../services/translation.service';
   standalone: true,
   imports: [CommonModule, MatIconModule],
   template: `
-    <div class="relative w-full h-full bg-[#050505] flex flex-col items-center justify-center p-6 md:p-12 overflow-hidden">
+    <div class="relative w-full h-full bg-[#050505] flex flex-col items-center justify-center p-4 md:p-8 lg:p-12 pb-24 lg:pb-24 overflow-hidden">
       
       <!-- Digital Noise Overlay -->
       <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none noise-bg"></div>
 
       <!-- Animated Neural Gateway Background -->
       <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-        <div class="relative w-[600px] h-[600px] md:w-[800px] md:h-[800px]">
+        <div class="relative w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[800px] lg:h-[800px]">
           <!-- Concentric Rings -->
           <div class="absolute inset-0 border border-syntra-action-primary/10 rounded-full animate-ping-slow"></div>
-          <div class="absolute inset-12 border border-syntra-action-primary/20 rounded-full animate-ping-slow" style="animation-delay: 1s"></div>
-          <div class="absolute inset-24 border border-syntra-action-primary/30 rounded-full animate-ping-slow" style="animation-delay: 2s"></div>
+          <div class="absolute inset-8 border border-syntra-action-primary/20 rounded-full animate-ping-slow" style="animation-delay: 1s"></div>
+          <div class="absolute inset-16 border border-syntra-action-primary/30 rounded-full animate-ping-slow" style="animation-delay: 2s"></div>
           
           <!-- Rotating Data Particles -->
           <div class="absolute inset-0 animate-spin-slow">
@@ -35,37 +35,37 @@ import { TranslationService } from '../../services/translation.service';
       </div>
 
       <!-- Content Container -->
-      <div class="relative z-10 w-full max-w-6xl flex flex-col items-center text-center">
+      <div class="relative z-10 w-full max-w-6xl flex flex-col items-center text-center h-full justify-center">
         
         <!-- Header -->
-        <div class="mb-6 md:mb-8 animate-fade-in">
-          <h2 class="text-syntra-action-primary font-mono text-xs md:text-sm font-bold uppercase tracking-[0.5em] mb-2">
+        <div class="mb-4 md:mb-6 lg:mb-8 animate-fade-in shrink-0">
+          <h2 class="text-syntra-action-primary font-mono text-[10px] md:text-xs font-bold uppercase tracking-[0.5em] mb-1">
             {{ t.translate('slide15_cta.title') }}
           </h2>
-          <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-[0.85] mb-4">
-            OWN YOUR<br/>
+          <h1 class="text-3xl md:text-5xl lg:text-7xl font-black text-white tracking-tighter leading-[0.85] mb-2 md:mb-4">
+            {{ t.translate('slide15.own_your') }}<br/>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-syntra-action-primary via-white to-syntra-action-primary bg-[length:200%_auto] animate-gradient-text">
-              AI FUTURE
+              {{ t.translate('slide15.ai_future') }}
             </span>
           </h1>
-          <p class="text-white/40 text-sm md:text-base font-light max-w-xl mx-auto leading-relaxed">
+          <p class="text-white/40 text-xs md:text-sm lg:text-base font-light max-w-xl mx-auto leading-relaxed">
             {{ t.translate('slide15_cta.subtitle') }}
           </p>
         </div>
 
         <!-- Impactful CTA Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full max-w-4xl mb-6 md:mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 w-full max-w-4xl mb-4 md:mb-6 lg:mb-8 flex-1 min-h-0 items-center">
           
           @for (cta of ctas; track $index) {
             <button 
-              class="cta-button group relative p-6 md:p-8 bg-white/[0.03] border border-white/10 rounded-[2rem] transition-all duration-700 hover:bg-white/[0.07] hover:border-syntra-action-primary/40 hover:-translate-y-2 overflow-hidden"
+              class="cta-button group relative p-4 md:p-6 lg:p-8 bg-white/[0.03] border border-white/10 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-700 hover:bg-white/[0.07] hover:border-syntra-action-primary/40 hover:-translate-y-1 overflow-hidden h-full flex flex-col justify-center"
               [style.animation-delay.s]="$index * 0.2"
             >
               <!-- Hover Glow -->
               <div class="absolute inset-0 bg-gradient-to-br from-syntra-action-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
               <div class="relative z-10 flex flex-col items-center">
-                <div class="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-syntra-action-primary/10 group-hover:border-syntra-action-primary/40 transition-all duration-500 relative">
+                <div class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-3 md:mb-4 lg:mb-6 group-hover:scale-110 group-hover:bg-syntra-action-primary/10 group-hover:border-syntra-action-primary/40 transition-all duration-500 relative">
                   
                   @if ($index === 0) {
                     <!-- Target (Lucide) -->
@@ -82,15 +82,15 @@ import { TranslationService } from '../../services/translation.service';
                   }
                 </div>
                 
-                <h3 class="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-syntra-action-primary transition-colors">
+                <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 group-hover:text-syntra-action-primary transition-colors">
                   {{ t.translate(cta.labelKey) }}
                 </h3>
-                <p class="text-white/30 text-xs md:text-sm font-light leading-relaxed group-hover:text-white/60 transition-colors max-w-[280px]">
+                <p class="text-white/30 text-[10px] md:text-xs lg:text-sm font-light leading-relaxed group-hover:text-white/60 transition-colors max-w-[280px]">
                   {{ t.translate(cta.descKey) }}
                 </p>
 
-                <div class="mt-6 flex items-center gap-3 text-syntra-action-primary font-mono text-[10px] uppercase tracking-[0.3em] font-bold opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                  <span>Initialize</span>
+                <div class="mt-3 md:mt-4 lg:mt-6 flex items-center gap-2 text-syntra-action-primary font-mono text-[8px] md:text-[10px] uppercase tracking-[0.3em] font-bold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                  <span>{{ t.translate('slide15.initialize') }}</span>
                   <mat-icon class="!text-xs !w-auto !h-auto">arrow_forward</mat-icon>
                 </div>
               </div>
@@ -100,10 +100,10 @@ import { TranslationService } from '../../services/translation.service';
         </div>
 
         <!-- Secondary Action -->
-        <div class="animate-fade-in" style="animation-delay: 1.2s">
-          <button class="group relative px-8 py-3 bg-syntra-action-primary rounded-full overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(62,255,196,0.4)]">
+        <div class="animate-fade-in shrink-0" style="animation-delay: 1.2s">
+          <button class="group relative px-6 py-2 md:px-8 md:py-3 bg-syntra-action-primary rounded-full overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(62,255,196,0.4)]">
             <div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
-            <span class="relative z-10 text-black font-black uppercase tracking-[0.2em] text-[10px] md:text-xs">
+            <span class="relative z-10 text-black font-black uppercase tracking-[0.2em] text-[8px] md:text-[10px] lg:text-xs">
               {{ t.translate('slide15_cta.cta') }}
             </span>
           </button>

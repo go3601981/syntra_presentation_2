@@ -7,7 +7,7 @@ import { TranslationService } from '../../services/translation.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="relative w-full h-full bg-[#050505] flex flex-col items-center justify-center p-6 md:p-12 overflow-hidden">
+    <div class="relative w-full h-full bg-[#050505] flex flex-col items-center justify-center p-6 md:p-12 pb-24 lg:pb-24 overflow-hidden">
       
       <!-- Digital Noise Overlay -->
       <div class="absolute inset-0 z-0 opacity-[0.05] pointer-events-none noise-bg"></div>
@@ -59,12 +59,12 @@ import { TranslationService } from '../../services/translation.service';
         <!-- Header Section -->
         <div class="mb-8 animate-fade-in">
           <h2 class="text-syntra-action-primary font-mono text-xs md:text-sm font-bold uppercase tracking-[0.6em] mb-4">
-            The Transformation
+            {{ t.translate('slide9.transformation') }}
           </h2>
           <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-[0.85] mb-6">
-            FROM CHAOS<br/>
+            {{ t.translate('slide9.from_chaos') }}<br/>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-syntra-action-primary to-white">
-              TO ORDER
+              {{ t.translate('slide9.to_order') }}
             </span>
           </h1>
         </div>

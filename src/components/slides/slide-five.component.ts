@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, signal, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, OnInit, OnDestroy, ViewChild, ElementRef, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../services/translation.service';
 
@@ -7,7 +7,7 @@ import { TranslationService } from '../../services/translation.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="relative w-full h-full bg-[#050505] overflow-hidden flex flex-col items-center p-8 md:p-16">
+    <div class="relative w-full h-full bg-[#050505] overflow-hidden flex flex-col items-center p-8 md:p-16 pb-24 lg:pb-24">
       
       <!-- Background Data Flicker -->
       <div class="absolute inset-0 z-0 opacity-5 pointer-events-none overflow-hidden">
@@ -22,9 +22,9 @@ import { TranslationService } from '../../services/translation.service';
 
       <!-- Impact Label (Now at the top) -->
       <div class="relative z-20 mb-12 text-center animate-fade-in" style="animation-delay: 4s;">
-        <p class="text-red-500/80 font-mono text-sm uppercase tracking-[0.3em] font-bold mb-2">The Visibility Gap</p>
+        <p class="text-red-500/80 font-mono text-sm uppercase tracking-[0.3em] font-bold mb-2">{{ t.translate('slide5.visibility_gap') }}</p>
         <h2 class="text-2xl md:text-3xl lg:text-4xl text-white font-light">
-          Inaccurate data leads to <span class="text-red-500 font-medium underline decoration-red-500/40 underline-offset-8">brand erosion</span>.
+          {{ t.translate('slide5.inaccurate_data') }} <span class="text-red-500 font-medium underline decoration-red-500/40 underline-offset-8">{{ t.translate('slide5.brand_erosion') }}</span>.
         </h2>
       </div>
 
@@ -51,7 +51,7 @@ import { TranslationService } from '../../services/translation.service';
           <!-- User Message -->
           <div class="flex justify-end animate-fade-in">
             <div class="max-w-[80%] bg-white/5 border border-white/10 rounded-2xl p-5 text-white/80 text-lg">
-              {{ t.translate('slide5.user_query') }}
+              {{ t.translate('common.user_query') }}
             </div>
           </div>
 
@@ -63,7 +63,7 @@ import { TranslationService } from '../../services/translation.service';
 
             <div class="flex-1 space-y-4">
               <div class="text-red-500 font-mono text-xs uppercase tracking-widest font-bold">
-                AI Agent Response
+                {{ t.translate('slide5.ai_agent_response') }}
               </div>
               
               <div class="text-white/90 text-xl leading-relaxed font-light min-h-[100px]">
@@ -84,10 +84,10 @@ import { TranslationService } from '../../services/translation.service';
               <!-- Data Flicker Overlay -->
               <div class="pt-4 flex gap-4" *ngIf="!isTyping()">
                 <div class="px-3 py-1 bg-red-500/10 border border-red-500/20 rounded text-[10px] text-red-400 font-mono uppercase tracking-tighter">
-                  Source: 404_NOT_FOUND
+                  {{ t.translate('slide5.source_404') }}
                 </div>
                 <div class="px-3 py-1 bg-red-500/10 border border-red-500/20 rounded text-[10px] text-red-400 font-mono uppercase tracking-tighter">
-                  Confidence: 12%
+                  {{ t.translate('slide5.confidence_12') }}
                 </div>
               </div>
             </div>
@@ -97,7 +97,7 @@ import { TranslationService } from '../../services/translation.service';
         <!-- Chat Footer -->
         <div class="p-6 border-t border-white/5 bg-white/[0.01]">
           <div class="w-full h-12 bg-white/5 rounded-xl border border-white/10 flex items-center px-4 text-white/20 text-sm italic">
-            Waiting for re-indexing...
+            {{ t.translate('slide5.waiting_reindexing') }}
           </div>
         </div>
       </div>
@@ -167,22 +167,48 @@ export class SlideFiveComponent implements OnInit, OnDestroy {
   showHallucination = signal(false);
   
   private typingInterval: any;
+  private simulationTimeout: any;
+  private errorTimeout1: any;
+  private errorTimeout2: any;
 
-  constructor(public t: TranslationService) {}
+  constructor(public t: TranslationService) {
+    effect(() => {
+      // Watch language changes
+      this.t.currentLang();
+      // Restart simulation
+      this.resetAndStart();
+    });
+  }
 
   ngOnInit() {
-    this.startSimulation();
+    // Simulation is started by the effect in the constructor
   }
 
   ngOnDestroy() {
+    this.clearAllTimeouts();
+  }
+
+  private clearAllTimeouts() {
     if (this.typingInterval) clearInterval(this.typingInterval);
+    if (this.simulationTimeout) clearTimeout(this.simulationTimeout);
+    if (this.errorTimeout1) clearTimeout(this.errorTimeout1);
+    if (this.errorTimeout2) clearTimeout(this.errorTimeout2);
+  }
+
+  resetAndStart() {
+    this.clearAllTimeouts();
+    this.displayedText.set('');
+    this.isTyping.set(false);
+    this.showError.set(false);
+    this.showHallucination.set(false);
+    this.startSimulation();
   }
 
   startSimulation() {
     const fullText = this.t.translate('slide5.ai_response_start');
     let index = 0;
     
-    setTimeout(() => {
+    this.simulationTimeout = setTimeout(() => {
       this.isTyping.set(true);
       this.typingInterval = setInterval(() => {
         if (index < fullText.length) {
@@ -199,10 +225,10 @@ export class SlideFiveComponent implements OnInit, OnDestroy {
   }
 
   triggerError() {
-    setTimeout(() => {
+    this.errorTimeout1 = setTimeout(() => {
       this.showError.set(true);
       this.scrollToBottom();
-      setTimeout(() => {
+      this.errorTimeout2 = setTimeout(() => {
         this.showHallucination.set(true);
         this.scrollToBottom();
       }, 1500);

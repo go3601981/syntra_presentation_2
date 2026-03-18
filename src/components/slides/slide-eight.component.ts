@@ -7,7 +7,7 @@ import { TranslationService } from '../../services/translation.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="relative w-full h-full bg-white flex flex-col items-center justify-center p-8 md:p-16 overflow-hidden">
+    <div class="relative w-full h-full bg-white flex flex-col items-center justify-center p-8 md:p-16 pb-24 lg:pb-24 overflow-hidden">
       
       <!-- Subtle Particle Background -->
       <div class="absolute inset-0 pointer-events-none">

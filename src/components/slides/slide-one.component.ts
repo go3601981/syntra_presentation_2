@@ -7,7 +7,7 @@ import { TranslationService } from '../../services/translation.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="relative w-full h-full bg-[#050505] overflow-hidden flex items-center justify-center">
+    <div class="relative w-full h-full bg-[#050505] overflow-hidden flex items-center justify-center pb-24 lg:pb-24">
       <!-- Digital Noise Overlay -->
       <div class="absolute inset-0 opacity-[0.05] pointer-events-none noise-bg"></div>
       

@@ -8,7 +8,7 @@ import { TranslationService } from '../../services/translation.service';
   standalone: true,
   imports: [CommonModule, MatIconModule],
   template: `
-    <div class="relative w-full h-full bg-[#050505] flex flex-col items-center justify-center p-8 md:p-16 overflow-hidden">
+    <div class="relative w-full h-full bg-[#050505] flex flex-col items-center justify-center p-8 md:p-16 pb-24 lg:pb-24 overflow-hidden">
       
       <!-- Digital Noise Overlay -->
       <div class="absolute inset-0 z-0 opacity-[0.05] pointer-events-none noise-bg"></div>

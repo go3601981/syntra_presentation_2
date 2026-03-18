@@ -8,7 +8,7 @@ import { TranslationService } from '../../services/translation.service';
   standalone: true,
   imports: [CommonModule, MatIconModule],
   template: `
-    <div class="relative w-full h-full bg-white flex flex-col p-6 md:p-12 lg:px-20 lg:py-10 overflow-hidden">
+    <div class="relative w-full h-full bg-white flex flex-col p-6 md:p-12 lg:px-20 lg:py-10 pb-24 lg:pb-24 overflow-hidden">
       
       <!-- Header Section -->
       <div class="relative z-10 mb-6 md:mb-10 animate-fade-in">
@@ -54,7 +54,7 @@ import { TranslationService } from '../../services/translation.service';
                 <polyline points="20 6 9 17 4 12"/>
               </svg>
             </div>
-            <span class="font-mono text-[10px] uppercase tracking-widest font-bold">Foundation</span>
+            <span class="font-mono text-[10px] uppercase tracking-widest font-bold">{{ t.translate('slide13_model.foundation') }}</span>
           </div>
         </div>
 
@@ -99,7 +99,7 @@ import { TranslationService } from '../../services/translation.service';
                 <polyline points="17 6 23 6 23 12"/>
               </svg>
             </div>
-            <span class="font-mono text-[10px] uppercase tracking-widest font-bold">Continuity</span>
+            <span class="font-mono text-[10px] uppercase tracking-widest font-bold">{{ t.translate('slide13_model.continuity') }}</span>
           </div>
         </div>
 
