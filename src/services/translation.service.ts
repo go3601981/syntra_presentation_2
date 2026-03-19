@@ -59,7 +59,12 @@ export class TranslationService {
     'slide3.search_result_1_desc': { en: 'Discover how artificial intelligence is impacting SEO and search engines in 2024...', es: 'Descubra cómo la inteligencia artificial está impactando el SEO y los motores de búsqueda en 2024...', de: 'Entdecken Sie, wie künstliche Intelligenz SEO und Suchmaschinen im Jahr 2024 beeinflusst...', pt: 'Descubra como a inteligência artificial está impactando o SEO e os mecanismos de busca em 2024...' },
     'slide3.search_result_2_title': { en: 'AI Search vs Traditional Search: What You Need to Know', es: 'Búsqueda por IA vs. Búsqueda tradicional: lo que necesita saber', de: 'KI-Suche vs. traditionelle Suche: Was Sie wissen müssen', pt: 'Busca por IA vs. Busca Tradicional: O que Você Precisa Saber' },
     'slide3.search_result_2_desc': { en: 'The landscape of digital marketing is shifting towards generative AI...', es: 'El panorama del marketing digital se está desplazando hacia la IA generativa...', de: 'Die Landschaft des digitalen Marketings verschiebt sich hin zu generativer KI...', pt: 'O cenário do marketing digital está mudando para a IA generativa...' },
-    'slide3.ai_response_title': { en: 'Syntra Advisory Insights', es: 'Syntra Advisory Insights', de: 'Syntra Advisory Insights', pt: 'Syntra Advisory Insights' },
+    'slide3.ai_response_title': { 
+      en: 'Syntra Advisory Insights', 
+      es: 'Perspectivas de Syntra Advisory', 
+      de: 'Syntra Advisory Einblicke', 
+      pt: 'Insights da Syntra Advisory' 
+    },
     'slide3.ai_response_body': { 
       en: 'Syntra Advisory is a specialized firm focused on AI Representation Strategy. We help brands ensure they are accurately interpreted and highly visible within the Large Language Models (LLMs) that power the new era of search.',
       es: 'Syntra Advisory es una firma especializada enfocada en la Estrategia de Representación en IA. Ayudamos a las marcas a asegurar que sean interpretadas con precisión y sean altamente visibles dentro de los Modelos de Lenguaje Extensos (LLMs) que impulsan la nueva era de búsqueda.',
@@ -68,6 +73,11 @@ export class TranslationService {
     },
     'slide3.ai_source_1': { en: 'Market Report 2024', es: 'Informe de Mercado 2024', de: 'Marktbericht 2024', pt: 'Relatório de Mercado 2024' },
     'slide3.ai_source_2': { en: 'AI Strategy Guide', es: 'Guía de Estrategia de IA', de: 'KI-Strategie-Leitfaden', pt: 'Guia de Estratégia de IA' },
+    'slide3.search_result_time': { en: '2 days ago', de: 'vor 2 Tagen', pt: 'há 2 dias', es: 'hace 2 días' },
+    'slide3.search_result_sponsored': { en: 'Sponsored', de: 'Gesponsert', pt: 'Patrocinado', es: 'Patrocinado' },
+    'slide3.ai_feature_realtime': { en: 'Real-time Analysis', de: 'Echtzeit-Analyse', pt: 'Análise em Tempo Real', es: 'Análisis en Tiempo Real' },
+    'slide3.ai_feature_insights': { en: 'Synthesized Insights', de: 'Synthetisierte Einblicke', pt: 'Insights Sintetizados', es: 'Insights Sintetizados' },
+    'slide3.ai_engine_version': { en: 'Syntra Neural Engine v2.4', de: 'Syntra Neural Engine v2.4', pt: 'Syntra Neural Engine v2.4', es: 'Syntra Neural Engine v2.4' },
 
     // Slide 4: The Opportunity
     'slide4.title': { 
@@ -464,6 +474,12 @@ export class TranslationService {
       de: ' Sie wurden jedoch kürzlich in einem Artikel aus dem Jahr 2019 über nicht zusammenhängende Logistik erwähnt.',
       pt: ' No entanto, foram mencionados recentemente num artigo de 2019 sobre logística não relacionada.'
     },
+    'slide5.neural_interface': {
+      en: 'Neural Interface v4.0.2',
+      es: 'Interfaz Neuronal v4.0.2',
+      de: 'Neuronale Schnittstelle v4.0.2',
+      pt: 'Interface Neural v4.0.2'
+    },
     'slide5.warning_label': {
       en: 'CRITICAL DATA GAP DETECTED',
       es: 'BRECHA DE DATOS CRÍTICA DETECTADA',
@@ -741,7 +757,7 @@ export class TranslationService {
     },
     'slide13_model.retainer': {
       en: 'Monthly Retainer',
-      es: 'Iguala Mensual',
+      es: 'Campaña Mensual',
       de: 'Monatliche Pauschale',
       pt: 'Retenção Mensal'
     },

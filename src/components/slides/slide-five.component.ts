@@ -37,7 +37,7 @@ import { TranslationService } from '../../services/translation.service';
             <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
             <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
             <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
-            <span class="ml-4 text-white/40 font-mono text-xs uppercase tracking-widest">Neural Interface v4.0.2</span>
+            <span class="ml-4 text-white/40 font-mono text-xs uppercase tracking-widest">{{ t.translate('slide5.neural_interface') }}</span>
           </div>
           <div class="flex items-center gap-2 text-red-500/60 font-mono text-[10px] uppercase tracking-tighter animate-pulse">
             <span class="w-2 h-2 rounded-full bg-red-500"></span>

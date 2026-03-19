@@ -37,8 +37,8 @@ import { TranslationService } from '../../services/translation.service';
                   {{ t.translate('slide3.search_result_' + (i % 2 === 0 ? '2' : '1') + '_desc') }}
                 </div>
                 <div class="flex gap-4 text-[10px] text-white/20 uppercase tracking-widest">
-                  <span>2 days ago</span>
-                  <span>Sponsored</span>
+                  <span>{{ t.translate('slide3.search_result_time') }}</span>
+                  <span>{{ t.translate('slide3.search_result_sponsored') }}</span>
                 </div>
               </div>
             }
@@ -51,6 +51,10 @@ import { TranslationService } from '../../services/translation.service';
                 </div>
                 <div class="text-white/40 text-sm line-clamp-2">
                   {{ t.translate('slide3.search_result_' + (i % 2 === 0 ? '2' : '1') + '_desc') }}
+                </div>
+                <div class="flex gap-4 text-[10px] text-white/20 uppercase tracking-widest">
+                  <span>{{ t.translate('slide3.search_result_time') }}</span>
+                  <span>{{ t.translate('slide3.search_result_sponsored') }}</span>
                 </div>
               </div>
             }
@@ -117,15 +121,15 @@ import { TranslationService } from '../../services/translation.service';
               <div class="flex gap-8">
                 <div class="flex items-center gap-2 text-white/40 text-[10px] uppercase tracking-widest">
                   <div class="w-1 h-1 rounded-full bg-syntra-action-primary"></div>
-                  Real-time Analysis
+                  {{ t.translate('slide3.ai_feature_realtime') }}
                 </div>
                 <div class="flex items-center gap-2 text-white/40 text-[10px] uppercase tracking-widest">
                   <div class="w-1 h-1 rounded-full bg-syntra-action-primary"></div>
-                  Synthesized Insights
+                  {{ t.translate('slide3.ai_feature_insights') }}
                 </div>
               </div>
               <div class="text-syntra-action-primary/40 font-mono text-[10px] uppercase tracking-widest">
-                Syntra Neural Engine v2.4
+                {{ t.translate('slide3.ai_engine_version') }}
               </div>
             </div>
           </div>
